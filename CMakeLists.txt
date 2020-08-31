@@ -147,9 +147,13 @@ include_directories(
   )
 
 
+## Resources
 add_subdirectory(src/tools/resgen)
-add_resource(FONT_ALEGREYA fonts/Alegreya/Alegreya-Bold.latin)
-add_resource(FONT_BERRYROTUNDA fonts/BerryRotunda/BerryRotunda.ttf)
+# Fonts
+add_resource(FONT_ALEGREYA data/fonts/Alegreya/Alegreya-Bold.latin)
+add_resource(FONT_BERRYROTUNDA data/fonts/BerryRotunda/BerryRotunda.ttf)
+# Soundfont (for midi playback)
+add_resource(SOUNDFONT_GENERAL808 data/general808/General808.sf2)
 
 set(AI_SRC
     src/ai/grammar.gen.tab.cpp
@@ -284,6 +288,7 @@ set(ENGINE_SRC
     ${UI_SRC}
     ${FONT_ALEGREYA}
     ${FONT_BERRYROTUNDA}
+    ${SOUNDFONT_GENERAL808}
     ${SETTINGS_SRC}
     ${DEBUG_SRC}
     ${EDITOR_SRC}
